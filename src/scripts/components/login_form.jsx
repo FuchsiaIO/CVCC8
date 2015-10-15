@@ -1,8 +1,15 @@
+import { ACTIONS }    from '../actions/chat_actions';
 import Dispatcher     from '../dispatcher/default';
 import React          from 'react';
 import Styles         from '../../styles/global';
 
 export default class LoginForm extends React.Component {
+
+  login() {
+    Dispatcher.dispatch(ACTIONS.LOGIN.LOGIN_ATTEMPT, {
+      username: this.refs.username.getDOMNode().value
+    });
+  }
   
   render() {
     return (
@@ -20,11 +27,11 @@ export default class LoginForm extends React.Component {
                       </div>
                   </div>
       
-                  <form className="form-horizontal login-inputs" role="form">
+                  <form className="form-horizontal login-inputs" role="form" onSubmit={this.login.bind(this)}>
                       
                       <div className="form-group">
                           <div className="input-group">
-                              <input type="text" className="form-control" placeholder="Guest" />
+                              <input ref='username' type="text" className="form-control" placeholder="Guest" />
                           </div>
                       </div>
       
