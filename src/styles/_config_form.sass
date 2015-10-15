@@ -1,0 +1,57 @@
+.drill-form
+  border-radius: 10px
+  background-color: rgba(255, 255, 255, 0.8)
+  
+  div
+    padding: 3px
+    
+  form
+    padding: 10px
+    display: flex
+    -webkit-flex-flow: row wrap
+    flex-flow: column
+    justify-content: center
+    
+    .select-style 
+      padding: 0
+      margin: 0
+      border: 1px solid #ccc
+      width: 120px
+      border-radius: 3px
+      overflow: hidden
+      background-color: #fff
+      background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%
+    
+    .select-style select
+      padding: 5px 8px
+      width: 130%
+      border: none
+      box-shadow: none
+      background-color: transparent
+      background-image: none
+      -webkit-appearance: none
+         -moz-appearance: none
+              appearance: none
+    
+    .select-style select:focus
+      outline: none
+      
+    .generate-btn
+      background: none
+      border: 1px solid #4c4d4f
+      color: #4c4d4f
+      text-decoration: none
+      padding: 10px
+      height: 46px
+      font-size: 18px
+      font-weight: bold
+      cursor: pointer
+      width: 100%
+       
+@media all and (max-width: 800px)
+  .drill-form
+    form
+      flex-flow: row wrap
+      
+      div
+        padding: 5px

@@ -1,0 +1,74 @@
+html > *
+  margin: 0
+  padding: 0
+
+body
+  background-color: black
+
+.flex-container
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-flow: row wrap
+  flex-flow: row wrap
+  
+  > *
+    padding: 10px
+    flex: 1 100%
+    
+header
+  text-align: center
+  background: rgba(255, 255, 255, 0.8)
+
+footer
+  background: rgba(255, 255, 255, 0.8)
+
+main
+  text-align: left
+  background: white
+  min-height: 400px
+  
+.app 
+  padding: 0px
+  margin: 10px
+  
+.incorrect
+  border: 2px solid red
+
+@media all and (max-width: 800px)
+  .aside-left
+    order: 1
+    
+  .app
+    order: 2
+    
+  .aside-right
+    order: 3
+    
+  .footer
+    order: 4
+    
+.center
+  text-align: center
+   
+@media all and (min-width: 800px)
+
+  .aside
+    flex: 1 auto
+    
+  .app
+    flex: 10 0px
+    
+  .aside-left
+    order: 1
+    
+  .app
+    order: 2
+    
+  .aside-right
+    order: 3
+    
+  .footer
+    order: 4
