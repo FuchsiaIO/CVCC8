@@ -4,9 +4,6 @@ import React              from 'react';
 import AuthStore          from './stores/auth_store';
 import LoginForm          from './components/login_form';
 
-/*
-let socket = io.connect('http://localhost:9090');
-*/
 export default class ChatApp extends React.Component {
 
   constructor() {
