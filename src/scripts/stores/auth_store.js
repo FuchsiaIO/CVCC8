@@ -1,16 +1,25 @@
 import { ACTIONS }    from '../actions/chat_actions';
 import Dispatcher     from '../dispatcher/default';
 
+let socket = io.connect('http://localhost:9090');
 let logged_in = false;
+let user      = false;
 
 let events = {
 
-  [ACTIONS.LOGIN.LOGIN_ATTEMPT]: (e) => {
-    Dispatcher.dispatch(ACTIONS.LOGIN.LOGIN_SUCESS);
+  [ACTIONS.LOGIN.LOGIN_ATTEMPT]: (data) => {
+    socket.emit('user:login', data, (result) => {
+      if( !result ) {
+        alert("Username taken.");
+      } else {
+        Dispatcher.dispatch(ACTIONS.LOGIN.LOGIN_SUCESS, data);
+      }
+    });
   },
   
-  [ACTIONS.LOGIN.LOGIN_ATTEMPT]: (e) => {
+  [ACTIONS.LOGIN.LOGIN_SUCESS]: (data) => {
     logged_in = true;
+    user      = data.name;
   }
 
 };

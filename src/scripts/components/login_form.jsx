@@ -7,7 +7,7 @@ export default class LoginForm extends React.Component {
 
   login() {
     Dispatcher.dispatch(ACTIONS.LOGIN.LOGIN_ATTEMPT, {
-      username: this.refs.username.getDOMNode().value
+      name: this.refs.username.getDOMNode().value
     });
   }
   
