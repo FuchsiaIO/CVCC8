@@ -47,7 +47,7 @@ var userNames = (function () {
 
 module.exports = function(socket) {
   
-  var name = userNames.getGuestName();
+  var name = undefined;
   
   socket.on('user:login', function (data, fn) {
     if (userNames.claim(data.name)) {
@@ -55,12 +55,23 @@ module.exports = function(socket) {
       socket.broadcast.emit('user:login', {
         name: name
       });
-      console.log("Logging in: "+name);
       fn(true);
     } else {
-      console.log("Name taken");
       fn(false);
     }
+  });
+  
+  socket.on('get:users', function(fn){
+    var data = userNames.get();
+    console.log(data);
+    fn(data);
+  });
+  
+  socket.on('send:message', function (data) {
+    socket.broadcast.emit('send:message', {
+      name: data.name,
+      text: data.text
+    });
   });
   
   socket.on('disconnect', function () {
