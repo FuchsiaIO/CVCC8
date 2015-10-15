@@ -9,13 +9,16 @@ export default {
       'LOGOUT'
     ]),
     
-    MSG: Dispatcher.Actions([
-      'ADD_MSG',
-      'CLEAR_MSG'
+    USR: Dispatcher.Actions([
+      'FETCH',
+      'SUBSCRIBE',
+      'UNSUBSCRIBE',
+      'UPDATE'
     ]),
     
-    CHAT: Dispatcher.Actions([
-      'SEND'
+    MSG: Dispatcher.Actions([
+      'SEND',
+      'ADD'
     ])
     
   }

@@ -26,6 +26,10 @@ let events = {
 
 export default Dispatcher.Store(events, {
   
+  current_user() {
+    return user;
+  },
+  
   is_logged_in() {
     return logged_in;
   }

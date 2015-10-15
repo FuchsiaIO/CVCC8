@@ -12,7 +12,7 @@ let events = {
       name: AuthStore.current_user(),
       text: message
     };
-    socket.emit('send:message',content);
+    socket.emit('send:message', content);
     Dispatcher.dispatch(ACTIONS.MSG.ADD, content);
   },
   

@@ -3,6 +3,9 @@ import Dispatcher         from './dispatcher/default';
 import React              from 'react';              
 import AuthStore          from './stores/auth_store';
 import LoginForm          from './components/login_form';
+import UserList           from './components/users_list';
+import ChatList           from './components/chat_list';
+import MessageForm        from './components/message_form';
 
 export default class ChatApp extends React.Component {
 
@@ -14,8 +17,16 @@ export default class ChatApp extends React.Component {
   render() {
     if( AuthStore.is_logged_in() ){
       return (
-        <div>
-          <h1>Logged In.</h1>
+        <div className='app'>
+          <div>
+            <UserList />
+          </div>
+          <div className='chat-container'>
+            <ChatList />
+          </div>
+          <div>
+            <MessageForm />
+          </div>
         </div>
       );
     } else {
