@@ -6,7 +6,10 @@ let logged_in = false;
 let events = {
 
   [ACTIONS.LOGIN.LOGIN_ATTEMPT]: (e) => {
-    console.log("here");
+    Dispatcher.dispatch(ACTIONS.LOGIN.LOGIN_SUCESS);
+  },
+  
+  [ACTIONS.LOGIN.LOGIN_ATTEMPT]: (e) => {
     logged_in = true;
   }
 
