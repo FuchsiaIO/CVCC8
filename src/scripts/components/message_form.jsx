@@ -28,7 +28,6 @@ export default React.createClass({
   },
   
   render() {
-    console.log(this.state);
     return (
       <div>
         <form className='message-form' onSubmit={this.send_message.bind(this)}>
