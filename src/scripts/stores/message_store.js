@@ -17,6 +17,9 @@ let events = {
   },
   
   [ACTIONS.MSG.ADD]: (message_obj) => {
+    if(messages.length == 50){
+      messages.shift();
+    }
     messages.push(message_obj);
   }
 
